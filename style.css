@@ -1,0 +1,50 @@
+body {
+    margin-top: 30px;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); 
+}
+.success, .error {
+    color: white;
+    padding: 5px;
+    margin: 5px 0 15px 0;
+}
+
+.success {
+    background: green;
+}
+
+.error {
+    background: red;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    background-color: gray;
+    padding: 15px 0px 15px 0px;
+    width: 100%;
+    text-align: center;
+}
+footer p {
+    display: inline;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+
+}
+footer p strong {
+    color: red;
+
+}
+a {
+    font-weight: bold;
+    color: red;
+    text-decoration: none;
+}
+
+
+#title, #author, #isbn, .success, .error {
+    border-radius: 7px;
+}
+
+.container {
+    margin-bottom: 10%;
+}
