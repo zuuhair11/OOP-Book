@@ -33,6 +33,27 @@ class UI {
         document.querySelector('#isbn').value   = '';
     }
 
+    // Show alert for adding new book
+    showAlert(message, className) {
+        // Create a div
+        const div = document.createElement('div');
+        // Add the class to the div
+        div.className = `alert ${className}`;
+        // Add the message that will show up in div
+        div.append(document.createTextNode(message));
+
+        // Access to the container
+        const container = document.querySelector('.container');
+        const form = document.querySelector('#book-form');
+        // => to put the div before the form
+        container.insertBefore(div, form);
+        
+        // Delete the alert after 3 seconds
+        setTimeout(function() {
+            document.querySelector('.alert').remove();
+
+        }, 3000);
+    }
 }
 
 // Event listener for adding a book
@@ -53,7 +74,8 @@ bookForm.addEventListener('submit', function(e) {
 
     // Check if the fields are empty
     if(title === '' || author === '' || isbn === '') {
-        alert('Fill in all fields please');
+        // Show alert for error
+        ui.showAlert('Fill in all fields please', 'error');
 
     } else {
         // Add book to list
@@ -62,5 +84,7 @@ bookForm.addEventListener('submit', function(e) {
         // Clear all fields when the book added successfully
         ui.clearFields();
 
+        // Show alert for success add
+        ui.showAlert('The book added successfully', 'success');
     }
 })
