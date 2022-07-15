@@ -25,6 +25,14 @@ class UI {
         // Append the row inside my list to show up
         list.appendChild(row);
     }
+
+    // Clear fields when the book added
+    clearFields() {
+        document.querySelector('#title').value  = '';
+        document.querySelector('#author').value = '';
+        document.querySelector('#isbn').value   = '';
+    }
+
 }
 
 // Event listener for adding a book
@@ -50,6 +58,9 @@ bookForm.addEventListener('submit', function(e) {
     } else {
         // Add book to list
         ui.addBookToList(book);
+
+        // Clear all fields when the book added successfully
+        ui.clearFields();
 
     }
 })
