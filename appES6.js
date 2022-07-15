@@ -54,6 +54,11 @@ class UI {
 
         }, 3000);
     }
+
+    // Delete book
+    deleteBook(target) {
+        target.parentElement.parentElement.remove();
+    }
 }
 
 // Event listener for adding a book
@@ -86,5 +91,21 @@ bookForm.addEventListener('submit', function(e) {
 
         // Show alert for success add
         ui.showAlert('The book added successfully', 'success');
+    }
+})
+
+// Event listener for deleting book
+const bookList = document.getElementById('book-list');
+bookList.addEventListener('click', function(e) {
+    // Instaniate new ui
+    const ui = new UI();
+
+    // Check the click on the X
+    if(e.target.classList.contains('delete')) {
+        // Delete book
+        ui.deleteBook(e.target);
+
+        // Show Alert for delete
+        ui.showAlert('The book deleted successfully', 'error');
     }
 })
