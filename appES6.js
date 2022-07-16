@@ -106,6 +106,6 @@ bookList.addEventListener('click', function(e) {
         ui.deleteBook(e.target);
 
         // Show Alert for delete
-        ui.showAlert('The book deleted successfully', 'error');
+        ui.showAlert('The book deleted successfully', 'delete');
     }
 })
